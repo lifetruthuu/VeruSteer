@@ -1,0 +1,23 @@
+DECISION CHECK USING OBSERVED REPAIR OUTCOMES:
+The following table summarizes the retrieved examples already shown above, one
+example per source task. It is evidence from other programs, not a prediction of
+this program's hidden successors. A witnessed successful continuation is stronger
+evidence than an appealing explanation of which diagnostic caused the others.
+Failure to observe a successful continuation in a finite tree is not impossibility.
+
+The support score is a similarity-weighted contrast: +1 for a witnessed successful
+continuation within the remaining number of calls, -1 for no witnessed successful
+continuation, and 0 for success witnessed only at a longer horizon. It is not a
+success probability. Source-task call counts are analogies, not exact costs here.
+Compare the strongest supported alternative with the action you would choose from
+the error message alone. When code and proof obligations match, give concrete
+repair outcomes more weight than a generic rule such as 'repair the root cause'.
+When they do not match, explain the specific mismatch in your one-sentence summary.
+Do not infer that a postcondition repair must wait until every invariant is fixed,
+or that Other is inapplicable merely because a more specific error is also present.
+Choose only from the current registry; do not change the specification.
+
+$EVIDENCE
+
+$STAGNATION
+Return only the same routing JSON requested above, with a concise summary.

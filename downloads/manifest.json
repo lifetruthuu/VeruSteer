@@ -1,0 +1,86 @@
+{
+  "format": "tar.gz-split-v1",
+  "chunk_bytes": 25165824,
+  "packages": [
+    {
+      "name": "corpus",
+      "roots": [
+        "data"
+      ],
+      "file_count": 4674,
+      "unpacked_bytes": 6038828650,
+      "parts": [
+        {
+          "path": "downloads/corpus-001.bin",
+          "bytes": 25165824
+        },
+        {
+          "path": "downloads/corpus-002.bin",
+          "bytes": 25165824
+        },
+        {
+          "path": "downloads/corpus-003.bin",
+          "bytes": 25165824
+        },
+        {
+          "path": "downloads/corpus-004.bin",
+          "bytes": 25165824
+        },
+        {
+          "path": "downloads/corpus-005.bin",
+          "bytes": 25165824
+        },
+        {
+          "path": "downloads/corpus-006.bin",
+          "bytes": 25165824
+        },
+        {
+          "path": "downloads/corpus-007.bin",
+          "bytes": 25165824
+        },
+        {
+          "path": "downloads/corpus-008.bin",
+          "bytes": 11396626
+        }
+      ],
+      "compressed_bytes": 187557394
+    },
+    {
+      "name": "selector",
+      "roots": [
+        "selector/embedding_table",
+        "selector/idmap"
+      ],
+      "file_count": 8,
+      "unpacked_bytes": 561908196,
+      "parts": [
+        {
+          "path": "downloads/selector-001.bin",
+          "bytes": 25165824
+        },
+        {
+          "path": "downloads/selector-002.bin",
+          "bytes": 25165824
+        },
+        {
+          "path": "downloads/selector-003.bin",
+          "bytes": 25165824
+        },
+        {
+          "path": "downloads/selector-004.bin",
+          "bytes": 25165824
+        },
+        {
+          "path": "downloads/selector-005.bin",
+          "bytes": 25165824
+        },
+        {
+          "path": "downloads/selector-006.bin",
+          "bytes": 6080494
+        }
+      ],
+      "compressed_bytes": 131909614
+    }
+  ],
+  "verification": "Shard sizes, gzip CRC, archive member counts and sizes"
+}

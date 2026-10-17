@@ -1,0 +1,21 @@
+TRAINING EXAMPLES FROM OTHER TASKS:
+The examples below record actual repair outcomes in a separate training corpus.
+Each example shows a state, its earlier executed actions, and what happened after
+different next error-type choices. A successful continuation is a witnessed path,
+not a guarantee that the same type will work on another program. "No recorded
+verified continuation" describes the finite recorded search, not impossibility.
+Path counts are not probabilities: branches were explored unequally.
+
+Use these examples to compare the likely repair effects in the CURRENT task:
+which proof fact was missing, which specialized repair established it, and what
+subsequent repairs completed verification. Match code and proof obligations as
+well as error-type names. Prefer a plausible route to full verification over a
+repair that merely reduces the visible error count. Repeated repairs can work
+when they address different obligations; judge them using the executed history.
+The examples may contain types unavailable now. Choose only from the CURRENT
+REPAIRER REGISTRY below. The example outcomes do not describe this current task.
+
+$EXAMPLES
+
+END OF TRAINING EXAMPLES. The following is the task you must decide for now.
+

@@ -1,0 +1,17 @@
+# Implementation and reproducibility notes
+
+This release assembles the current data and the two requested neural sources. It changes resource locations and execution interfaces to work independently. The online adapter loads `SModel`, reports explicit failures when enabled, and aligns each history state with its preceding selected action, including when the history window is truncated. It no longer silently substitutes zero vectors for unseen text when the encoder is unavailable.
+
+The paper and the available artifacts have several differences that should remain visible:
+
+- The paper describes dropout 0.1. The provided trainer defaults to 0.2; the documented training commands explicitly pass 0.1.
+- The available preference builder conditions its comparisons on default/non-default tree classes and applies a per-tree cap. This is more specific than §5.2's description in which default status plays no role. The supplied 18,885 training rows are preserved, and the release validates their encodings directly. Running a builder on a modified corpus is not guaranteed to recreate those exact rows or their order.
+- The recorded point labelled `L=4` gives Verification Retention 12/14 and Exploration 9/11 in its current log and accompanying source statistics, whereas Figure 7 in the supplied PDF gives 12/14 and 8/11. The regenerated figure uses the observed 9/11. The original result is not replaced with another run to match the PDF.
+- The existence of independent 342/69/273 task lists does not establish that every previously reported checkpoint or learned rule was selected using that validation partition. The supplied trainer uses validation CSVs; historical checkpoint-selection commands and logs are not supplied here. Final outcome logs are sufficient to recompute reported results, not to prove their training provenance.
+- The corpus retains 24 restored early-pruned default paths and one known malformed candidate list in a training tree. See the data guide and validator report. New raw-tree exports require the same completion/inspection step before comparisons.
+
+The validation/test CSVs contain preferred trajectories for recorded-prefix prediction, not full validation/test repair rollouts. Code and feedback embeddings are frozen pretrained representations with a shared vocabulary. All newly fitted rules must use the published training paths only. The final prompt bank is task-disjoint from validation and test data; prompt development followed earlier exploratory test observations, so these prompt results should not be described as an untouched initial test.
+
+The public branch contains one publication snapshot. Abandoned model variants and developer journals are excluded. Final rollout logs are research results. Data and vectors are stored in ordinary Git as gzip archive shards, each at most 24 MiB. `manifest.json` records the expanded paths, sizes, and purposes; `downloads/manifest.json` records the shard inventory. Restoration checks byte counts and gzip's built-in CRC. The validator uses counts and content-level field comparisons; existing hash-derived path/state identifiers remain identifiers, and no full-file SHA-256 verification is required.
+
+Compressed data are served as binary files by the anonymous mirror. Local filesystem prefixes were therefore normalized before packaging, consistently in data and ID maps. The existing vectors remain attached to their original IDs. Recorded numerical outcomes are unchanged; fresh text encoding and prompt requests can differ in their normalized path strings.

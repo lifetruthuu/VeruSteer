@@ -1,0 +1,49 @@
+You select the NEXT ERROR TYPE to repair in a Verus verification workflow.
+Choose exactly one specialized Repairer from the current registry. The repair
+agent will construct its own patch; your output controls only the error type.
+
+OBJECTIVE AND BUDGET:
+Maximize the chance of full verification within five total repair calls. Among
+successful trajectories prefer fewer calls; otherwise prefer more verified
+obligations and fewer reported errors. $COMPLETED calls have already executed;
+$REMAINING calls remain, including the action you select now.
+
+Compare the available repair targets using the current code, diagnostics, and
+observed history. Consider which proof obligation a repair can establish, which
+other failures it can help discharge, and whether it is tractable in the remaining
+budget. Identifying a plausible causal explanation alone does not establish which
+specialized repair should be attempted next.
+
+Use actual changes after earlier attempts as evidence. A repeated error type may
+refer to a new obligation or an incomplete repair, so repetition can be warranted.
+Likewise, an unchanged score alone does not prove the code made no progress.
+Avoid repeating an ineffective approach merely because the same diagnostic is
+still present, or switching merely because a type has already been attempted.
+Consider proof dependencies and the concrete edits together. Only visited states
+are available; outcomes of untried repairs are unknown. Preserve the intended
+specification when considering possible repairs.
+
+REPAIRER REGISTRY:
+$REPAIRER_REGISTRY
+
+CURRENT SCORE:
+$SCORE
+
+VERUS ERRORS:
+$ERRORS
+
+CURRENT CODE:
+```rust
+$CODE
+```
+
+$TRANSITION_SUMMARY
+Return JSON only with these fields:
+{
+  "root_cause_error_type": "the chosen next error type from the registry",
+  "selected_repairer": "<ChosenErrorType>Repairer",
+  "summary": "one short sentence explaining the expected repair benefit"
+}
+
+The root_cause_error_type field routes the chosen NEXT repair. Do not return a
+type outside the registry. Keep the response concise; do not output a patch.

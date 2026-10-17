@@ -1,0 +1,21 @@
+{
+  "use_openai": true,
+  "single_completion_only": true,
+  "aoai_api_base": [
+    "${LLM_BASE_URL}"
+  ],
+  "aoai_api_key": [
+    "${LLM_API_KEY}"
+  ],
+  "aoai_generation_model": "deepseek-chat",
+  "aoai_debug_model": "deepseek-chat",
+  "aoai_api_version": "2024-10-21",
+  "aoai_max_retries": 5,
+  "max_token": 4096,
+  "debug_max_attempt": 3,
+  "debug_temp": 1.0,
+  "verus_path": "${VERUS_PATH}",
+  "example_path": "${ARTIFACT_ROOT}/pipelines/tree_collection/autoverus/examples",
+  "lemma_path": "${ARTIFACT_ROOT}/pipelines/tree_collection/autoverus/lemmas",
+  "util_path": "${ARTIFACT_ROOT}/pipelines/tree_collection/utils"
+}

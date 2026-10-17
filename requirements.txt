@@ -1,0 +1,12 @@
+# Data, training, figures, prompt selection, and Python repair dependencies.
+# Python 3.11+ recommended; install a PyTorch build appropriate to your device.
+torch>=2.5,<3
+numpy>=1.26,<3
+pandas>=2.2,<4
+tqdm>=4.66
+matplotlib>=3.8
+PyYAML>=6
+openai>=1.77,<4
+azure-identity>=1.22
+rich>=13.6
+loguru>=0.7

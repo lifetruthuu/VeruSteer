@@ -1,0 +1,20 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+target/
+outputs/
+*.local.json
+*.local.yaml
+.env
+
+# Expanded research assets are restored from the committed download shards.
+/data/*
+!/data/README.md
+/selector/embedding_table/*
+!/selector/embedding_table/README.md
+/selector/idmap/*
+!/selector/idmap/README.md
+/downloads/*.partial
+/downloads/.pack-*/
+/.restore-*/
