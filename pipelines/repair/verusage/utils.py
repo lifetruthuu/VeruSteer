@@ -53,7 +53,10 @@ class AttrDict(dict):
     """Dictionary that allows attribute-style access to keys."""
 
     def __getattr__(self, name):
-        return self[name]
+        try:
+            return self[name]
+        except KeyError as exc:
+            raise AttributeError(name) from exc
 
 
 # ============================================================================

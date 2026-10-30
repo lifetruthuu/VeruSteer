@@ -17,5 +17,7 @@
   "verus_path": "${VERUS_PATH}",
   "example_path": "${ARTIFACT_ROOT}/pipelines/repair/autoverus/examples",
   "lemma_path": "${ARTIFACT_ROOT}/pipelines/repair/autoverus/lemmas",
-  "util_path": "${ARTIFACT_ROOT}/pipelines/repair/utils"
+  "util_path": "${ARTIFACT_ROOT}/pipelines/repair/utils",
+  "fvt_mode": false,
+  "fvt_prompt_supplement": ""
 }
